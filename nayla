@@ -11,7 +11,7 @@ White="\0033[1;39m"
 Yellow="\0033[1;33m"
 i=0
 
-nohup paplay arcade2.ogg &
+
 Colors () {
     Rainbow=($Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Brown $Grey $White $Yellow)
 
@@ -43,12 +43,10 @@ Colors () {
                     ████"
         # && paplay Jingle_Bells.ogx
         # paplay Jigle_Bells.ogx
-
-        sleep 1s
+        paplay arcade5.ogg
+        #sleep 1s
 
     done
 }
 
 Colors
-
-#Nota: rename ASCIInema
