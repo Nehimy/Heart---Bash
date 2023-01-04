@@ -9,24 +9,35 @@ Brown="\0033[0;33m"
 Grey="\0033[0;37m"
 White="\0033[1;39m"
 Yellow="\0033[1;33m"
+
+Cian2="\e[1;36m"
+DarkGreen="\e[1;92m"
+LightRed="\e[1;91m"
+DarkGray="\e[1;90m"
+LightMagneta="\e[1;95m"
+
 i=0
+color=false
 
-nohup paplay arcade2.ogg &
+nohup paplay NightcoreGoGoGo.ogg > /dev/null 2>&1 &
+
 Colors () {
-    Rainbow=($Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Brown $Grey $White $Yellow)
+    Rainbow=($Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Brown $Grey $White $Yellow $Cian2 $DarkGreen $LightRed $DarkGray $LightMagneta $Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Grey $White  $Yellow $Cian2 $Brown $Yellow $LightRed $LightMagneta $LightRed $Red)
 
-    while [ $i -le 9 ]
+    while [ $i -le 29 ]
     do
         clear
         echo -e ${Rainbow[$i]} My heart ASCII
         i=$(($i+1))
 
-        echo "
-        ████████            ████████
-        ████████            ████████
+        if $color
+          then
+              echo "
+        ████████            ████████       ♥
+        ████████            ████████          ♥
+    ████▒▒▒▒▒▒▒▒████    ████░░░░░░░░████        ♥
     ████▒▒▒▒▒▒▒▒████    ████░░░░░░░░████
-    ████▒▒▒▒▒▒▒▒████    ████░░░░░░░░████
-████▒▒▒▒▒▒▒▒▒▒▒▒░░░░████░░░░░░░░        ████
+████▒▒▒▒▒▒▒▒▒▒▒▒░░░░████░░░░░░░░        ████    ♥
 ████▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░  ░░        ████
 ████▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░            ████
 ████▒▒▒▒░░░░░░░░░░░░░░░░                ████
@@ -41,14 +52,38 @@ Colors () {
                 ████    ████
                     ████
                     ████"
-        # && paplay Jingle_Bells.ogx
-        # paplay Jigle_Bells.ogx
 
+              color=false
+        else
+
+                echo "
+        ████████            ████████
+        ████████            ████████
+    ████▒▒▒▒▒▒▒▒████    ████░░░░░░░░████
+    ████▒▒▒▒▒▒▒▒████    ████░░░░░░░░████
+████▒▒▒▒▒▒▒▒▒▒▒▒░░░░████░░░░░░░░        ████
+████▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░  ░░        ████
+████▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░            ████
+████▒▒▒▒░░░░░░░░░░░░░░░░                ████
+████▒▒▒▒░░░░░░░░░░░░░░░░                ████
+    ████░░░░░░░░░░░░                ████
+    ████░░░░░░░░░░░░                ████
+  ♥.*   ████░░░░                ████
+        ████░░░░                ████*.♥
+            ████            ████
+         ♥.*████            ████*.♥
+                ████    ████
+             ♥.*████    ████*.♥
+                    ████
+                 ♥.*████*.♥
+                    "
+
+                color=true
+
+        fi
         sleep 1s
 
     done
 }
 
 Colors
-
-#Nota: rename ASCIInema
