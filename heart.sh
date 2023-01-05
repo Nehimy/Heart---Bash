@@ -19,12 +19,14 @@ LightMagneta="\e[1;95m"
 i=0
 color=false
 
-nohup paplay NightcoreGoGoGo.ogg > /dev/null 2>&1 &
+nohup paplay GoGoGo.ogg > /dev/null 2>&1 &
 
 Colors () {
     Rainbow=($Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Brown $Grey $White $Yellow $Cian2 $DarkGreen $LightRed $DarkGray $LightMagneta $Cian $CianBold $Red $RedBol $Lilac $LilacBlold $Grey $White  $Yellow $Cian2 $Brown $Yellow $LightRed $LightMagneta $LightRed $Red)
 
-    while [ $i -le 29 ]
+
+
+    while [ $i -le 31 ]
     do
         clear
         echo -e ${Rainbow[$i]} My heart ASCII
@@ -68,8 +70,8 @@ Colors () {
 ████▒▒▒▒░░░░░░░░░░░░░░░░                ████
     ████░░░░░░░░░░░░                ████
     ████░░░░░░░░░░░░                ████
-  ♥.*   ████░░░░                ████
-        ████░░░░                ████*.♥
+  ♥.*   ████░░░░                ████░░░░
+        ████                ████*.♥
             ████            ████
          ♥.*████            ████*.♥
                 ████    ████
@@ -81,9 +83,10 @@ Colors () {
                 color=true
 
         fi
-        sleep 1s
+        sleep 1
 
     done
+    kill $!
 }
 
 Colors
